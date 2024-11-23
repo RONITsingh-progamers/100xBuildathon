@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ClientLayout from "./clientLayout";
 
 const gilmerRegular = localFont({
   src: "/fonts/GilmerRegular.otf",
@@ -22,10 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${gilmerRegular.variable} antialiased`}
-      >
-        {children}
+      <body className={`${gilmerRegular.variable} antialiased`}>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
